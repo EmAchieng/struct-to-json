@@ -1,6 +1,11 @@
 # Structs to JSON: Go REST API Example
 
-Welcome! This is a practical Go REST API for user management, demonstrating best practices in Go for JSON handling, code organization, validation, PostgreSQL integration, and error responses. Feel free to use this as a learning project, or as an example of idiomatic Go.
+- Welcome! This is a practical mini Go REST API for user management, demonstrating best practices in Go for JSON handling, code organization, validation, PostgreSQL integration, and error responses.
+---
+
+## Architecture Diagram
+
+You will see at `diagram.png` 
 
 ---
 
@@ -22,10 +27,13 @@ Welcome! This is a practical Go REST API for user management, demonstrating best
 - Go (1.21 +)
 - PostgreSQL (local or remote)
 
+**Get Started:** 
+```sh
+git clone https://github.com/EmAchieng/struct-to-json.git
+```
 ### 1. Prepare Your Database
 
 Create a PostgreSQL database and user for this app.  
-**Tip:** Use a strong password and don't share it in public code!
 
 1. Create your database and user (in psql or DBeaver, etc):
     ```sql
@@ -48,7 +56,6 @@ Create a PostgreSQL database and user for this app.
 ### 2. Configure Environment
 
 Set the `DATABASE_URL` environment variable for your connection.  
-**Do not put real passwords in public repos or files.**
 
 Example for your terminal:
 ```sh
@@ -98,13 +105,6 @@ curl http://localhost:8080/users
 - Want to use a different database? Implement the `UserStore` interface for your backend.
 - Add authentication, logging, or more resource types as needed.
 - Integrate with a frontend or deploy as a microservice.
-
----
-
-## Architecture Diagram
-
-You can see `diagram.png` 
-
 ---
 
 ## License
