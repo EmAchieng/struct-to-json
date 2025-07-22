@@ -1,11 +1,34 @@
-# Structs to JSON: Go REST API Example
+# Structs to JSON: Go REST API
 
-- Welcome! This is a practical mini Go REST API for user management, demonstrating best practices in Go for JSON handling, code organization, validation, PostgreSQL integration, and error responses.
+Welcome! This project is a practical demonstration of a minimal Go REST API for user management. It showcases best practices in:
+
+- JSON handling with Go structs  
+- Clean and modular code organization  
+- Input validation  
+- PostgreSQL integration  
+- Standardized error responses  
+
+This demo has been created for a talk at the **First Online Go Language Conference for the South African Community**.
+
 ---
 
-## Architecture Diagram
+## Struct-to-JSON Flow
 
-You will see at `diagram.png` 
+![Struct-to-JSON Flow Diagram](Struct-to-JSON.png)
+
+This diagram illustrates the HTTP handler flow in Go:
+
+1. **HTTP Request** – A request is received by the server (e.g. `POST /users`).
+2. **Router** – The request is routed using a multiplexer.
+3. **Handler Function** – The request is handled by a function.
+4. **Decode JSON** – The handler decodes the request body into a Go struct using `json.NewDecoder(r.Body).Decode(&input)`.
+5. **Create or Prepare Struct** – The handler may directly use the input or prepare a new response struct.
+6. **Returns struct/data** – A struct is prepared for response.
+7. **Encode JSON Response** – The struct is encoded to JSON using `json.NewEncoder(w).Encode(user)`.
+8. **HTTP JSON Response Sent** – JSON is sent back to the client as the response.
+
+📌  _The above can be adapted and extended by service or business logic.—._
+
 
 ---
 
@@ -16,9 +39,6 @@ You will see at `diagram.png`
 - Clean project structure, easy to extend
 - Input validation for safer data
 - Consistent, clear error handling
-- Health check endpoint for monitoring
-- Designed for production-readiness (timeouts, graceful shutdown)
-
 ---
 
 ## Getting Started
@@ -62,7 +82,7 @@ Example for your terminal:
 export DATABASE_URL="postgres://demo_user:YOUR_STRONG_PASSWORD@localhost:5432/structs_demo?sslmode=disable"
 ```
 
-### 3. Build and Run
+### 3a. Build and Run Locally
 
 Install dependencies and start the server:
 ```sh
@@ -71,6 +91,19 @@ go run cmd/server/main.go
 ```
 The server will listen on [http://localhost:8080](http://localhost:8080).
 
+### 3b. Build and Run With Docker
+
+Install dependencies and start the server:
+```sh
+docker build -t structs-to-json .
+```
+
+```sh
+docker run --rm -p 8080:8080 \
+  -e DATABASE_URL="postgres://demo_user:YOUR_STRONG_PASSWORD@host.docker.internal:5432/structs_demo?sslmode=disable" \
+  structs-to-json
+
+```
 ---
 
 ## API Overview
