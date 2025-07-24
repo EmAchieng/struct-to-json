@@ -130,7 +130,7 @@ http://localhost:8080/users
 curl http://localhost:8080/users
 ```
 
-Production Tip: Always use HTTPS for API requests in production.
+- Production Tip: Always use HTTPS for API requests in production.
 ---
 
 ## Adapting and Extending
@@ -139,7 +139,7 @@ Production Tip: Always use HTTPS for API requests in production.
 - Add authentication, logging, or more resource types as needed.
 - Integrate with a frontend or deploy as a microservice.
 
-Maintenance Tip: Regularly update dependencies to receive security patches.
+- Maintenance Tip: Regularly update dependencies to receive security patches.
 ---
 
 ## License
