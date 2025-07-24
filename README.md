@@ -34,8 +34,8 @@ This diagram illustrates the HTTP handler flow in Go:
 
 ## Features
 
-- Full CRUD for users (Create, Read, Update, Delete)
-- PostgreSQL storage (no data loss on restart)
+- CRUD for users (Create, Read, Update, Delete)
+- PostgreSQL storage 
 - Clean project structure, easy to extend
 - Input validation for safer data
 - Consistent, clear error handling
@@ -58,7 +58,7 @@ Create a PostgreSQL database and user for this app.
 1. Create your database and user (in psql or DBeaver, etc):
     ```sql
     CREATE DATABASE structs_demo;
-    CREATE USER demo_user WITH PASSWORD 'YOUR_STRONG_PASSWORD';
+    CREATE USER demo_user WITH PASSWORD '...';  -- Password stored securely elsewhere
     GRANT ALL PRIVILEGES ON DATABASE structs_demo TO demo_user;
     ```
 
@@ -79,7 +79,7 @@ Set the `DATABASE_URL` environment variable for your connection.
 
 Example for your terminal:
 ```sh
-export DATABASE_URL="postgres://demo_user:YOUR_STRONG_PASSWORD@localhost:5432/structs_demo?sslmode=disable"
+export DATABASE_URL="postgres://demo_user:$DB_PASSWORD@localhost:5432/structs_demo?sslmode=disable"
 ```
 
 ### 3a. Build and Run Locally
@@ -100,9 +100,8 @@ docker build -t structs-to-json .
 
 ```sh
 docker run --rm -p 8080:8080 \
-  -e DATABASE_URL="postgres://demo_user:YOUR_STRONG_PASSWORD@host.docker.internal:5432/structs_demo?sslmode=disable" \
+  -e DATABASE_URL="postgres://demo_user:${DB_PASSWORD}@host.docker.internal:5432/structs_demo?sslmode=disable" \
   structs-to-json
-
 ```
 ---
 
