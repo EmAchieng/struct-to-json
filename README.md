@@ -130,6 +130,7 @@ http://localhost:8080/users
 curl http://localhost:8080/users
 ```
 
+**Production Tip:** Always use HTTPS for API requests in production.
 ---
 
 ## Adapting and Extending
@@ -137,6 +138,8 @@ curl http://localhost:8080/users
 - Want to use a different database? Implement the `UserStore` interface for your backend.
 - Add authentication, logging, or more resource types as needed.
 - Integrate with a frontend or deploy as a microservice.
+
+**Maintenance Tip:** Regularly update dependencies to receive security patches.
 ---
 
 ## License
