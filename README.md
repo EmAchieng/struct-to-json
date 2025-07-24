@@ -1,4 +1,13 @@
 # Structs to JSON: Go REST API
+[![Build Status](https://img.shields.io/github/actions/workflow/status/EmAchieng/struct-to-json/ci.yml?branch=main)](https://github.com/EmAchieng/struct-to-json/actions)
+[![Go Version](https://img.shields.io/github/go-mod/go-version/EmAchieng/struct-to-json)](https://golang.org/doc/go1.21)
+[![Last Commit](https://img.shields.io/github/last-commit/EmAchieng/struct-to-json)](https://github.com/EmAchieng/struct-to-json/commits)
+[![Issues](https://img.shields.io/github/issues/EmAchieng/struct-to-json)](https://github.com/EmAchieng/struct-to-json/issues)
+[![Pull Requests](https://img.shields.io/github/issues-pr/EmAchieng/struct-to-json)](https://github.com/EmAchieng/struct-to-json/pulls)
+[![Code Style: gofmt](https://img.shields.io/badge/code%20style-gofmt-brightgreen.svg)](https://golang.org/doc/go1.21#go-fmt)
+[![License](https://img.shields.io/github/license/EmAchieng/struct-to-json)](./LICENSE)
+[![Dependencies](https://img.shields.io/librariesio/github/EmAchieng/struct-to-json)](https://libraries.io/github/EmAchieng/struct-to-json)
+[![Contributors](https://img.shields.io/github/contributors/EmAchieng/struct-to-json)](https://github.com/EmAchieng/struct-to-json/graphs/contributors)
 
 Welcome! This project is a practical demonstration of a minimal Go REST API for user management. It showcases best practices in:
 
