@@ -65,7 +65,7 @@ Create a PostgreSQL database and user for this app.
 1. Create your database and user (in psql or DBeaver, etc):
     ```sql
     CREATE DATABASE structs_demo;
-    CREATE USER demo_user WITH PASSWORD '...';  -- Password stored securely elsewhere
+    CREATE USER demo_user WITH PASSWORD '$DB_PASSWORD';  -- Password stored securely elsewhere
     GRANT ALL PRIVILEGES ON DATABASE structs_demo TO demo_user;
     ```
 
