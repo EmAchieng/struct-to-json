@@ -1,5 +1,5 @@
 # Structs to JSON: Go REST API
-[![Go Version](https://img.shields.io/github/go-mod/go-version/EmAchieng/struct-to-json)](https://golang.org/doc/go1.21)
+[![Go Version](https://img.shields.io/github/go-mod/go-version/EmAchieng/struct-to-json)](https://golang.org/doc/go1.24)
 [![Last Commit](https://img.shields.io/github/last-commit/EmAchieng/struct-to-json)](https://github.com/EmAchieng/struct-to-json/commits)
 [![Issues](https://img.shields.io/github/issues/EmAchieng/struct-to-json)](https://github.com/EmAchieng/struct-to-json/issues)
 [![Pull Requests](https://img.shields.io/github/issues-pr/EmAchieng/struct-to-json)](https://github.com/EmAchieng/struct-to-json/pulls)
