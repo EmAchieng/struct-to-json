@@ -88,6 +88,15 @@ Example for your terminal:
 ```sh
 export DATABASE_URL="postgres://demo_user:$DB_PASSWORD@localhost:5432/structs_demo?sslmode=disable"
 ```
+If your database is external, use the external host or IP:
+
+```
+DATABASE_URL=postgres://demo_user:yourpassword@<EXTERNAL_HOST>:5432/structs_demo?sslmode=disable
+```
+
+Replace `<EXTERNAL_HOST>` with your external database server’s address (e.g., `db.example.com` or an IP).
+
+> Make sure your firewall and database settings allow remote connections.
 
 ### 3a. Build and Run Locally
 
@@ -128,7 +137,7 @@ docker run --rm -p 8080:8080 \
 **Create:**
 ```sh
 curl -X POST -H "Content-Type: application/json" \
--d '{"username":"alice","email":"alice@example.com","active":true}' \
+-d '{"username":"gopher","email":"gopher@example.com","active":true}' \
 http://localhost:8080/users
 ```
 
@@ -147,6 +156,7 @@ curl http://localhost:8080/users
 - Integrate with a frontend or deploy as a microservice.
 
 - Maintenance Tip: Regularly update dependencies to receive security patches.
+- Extend API endpoints to support pagination, filtering, or advanced queries.
 ---
 
 ## License
