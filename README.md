@@ -6,6 +6,7 @@
 [![Code Style: gofmt](https://img.shields.io/badge/code%20style-gofmt-brightgreen.svg)](https://golang.org/doc/go1.21#go-fmt)
 [![License](https://img.shields.io/github/license/EmAchieng/struct-to-json)](./LICENSE)
 [![Contributors](https://img.shields.io/github/contributors/EmAchieng/struct-to-json)](https://github.com/EmAchieng/struct-to-json/graphs/contributors)
+[![Slides with Marp](https://img.shields.io/badge/slides-marp-blue?logo=marp)](https://marp.app/)
 
 Welcome! This project is a practical demonstration of a minimal Go REST API for user management. It showcases best practices in:
 
@@ -16,6 +17,8 @@ Welcome! This project is a practical demonstration of a minimal Go REST API for 
 - Standardized error responses  
 
 This demo has been created for a talk at the **First Online Go Language Conference for the South African Community**.
+
+_Slides for this talk(slides.md) were prepared using [Marp](https://marp.app/) for Markdown-based presentations._
 
 ---
 
