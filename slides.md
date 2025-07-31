@@ -81,7 +81,8 @@ Database integration, API endpoints, Service flow
 
 ## Go Structs: Building Blocks of Data
 
-Go structs are collections of fields with typed data that:
+Go structs are collections of fields with typed data 
+
 - **Custom types**
 - **Grouping data**
 - **Object-oriented patterns**
