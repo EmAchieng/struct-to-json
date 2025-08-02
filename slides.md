@@ -72,10 +72,10 @@ section.cover-slide {
 Go structs fundamentals, JSON as API language
 
 **Implementation**  
-Struct tags for JSON, Encoding/Decoding, Data validation
+JSON Serialization
 
-**Real-world Application**  
-Database integration, API endpoints, Service flow
+**Advanced Techniques**  
+Custom marshaling, validation
 
 ---
 
