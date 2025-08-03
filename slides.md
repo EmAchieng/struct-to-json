@@ -72,9 +72,9 @@ section.cover-slide {
 Go structs fundamentals, JSON as API language
 
 **Implementation**  
-JSON Serialization
+JSON Serialization, Encoding/Decoding
 
-**Advanced Techniques**  
+**Other Techniques**  
 Custom marshaling, validation
 
 ---
