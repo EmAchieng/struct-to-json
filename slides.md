@@ -247,7 +247,7 @@ func handler(ctx context.Context) {
 
 ---
 
-## Request, Process, Decode, Encode
+## Request, Process, Decode, Encode (cont.)
 
 - **Request**  
   HTTP request arrives with JSON payload  
