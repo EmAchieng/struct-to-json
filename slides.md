@@ -247,7 +247,7 @@ func handler(ctx context.Context) {
 
 ---
 
-## Request, Process, Decode, Encode (cont.)
+## Request, Process, Decode, Encode
 
 - **Request**  
   HTTP request arrives with JSON payload  
@@ -274,7 +274,7 @@ func handler(ctx context.Context) {
 
 ---
 
-## Request, Process, Decode, Encode
+## Request, Process, Decode, Encode (cont.)
 
 ![HTTP Cat 201](https://http.cat/201)
 
