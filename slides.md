@@ -78,6 +78,17 @@ JSON Serialization, Encoding/Decoding
 Custom marshaling, validation
 
 ---
+## Structs: The Cornerstone of API Design
+
+**Beyond Simple Data Transfer**
+
+- Structs as domain-driven contracts across system boundaries
+- Embedding for composition vs. inheritance patterns
+- Unexported fields for encapsulation while preserving serialization
+
+Structs aren't just containers – they're the shared language between your application layers.
+
+---
 
 ## Go Structs: Building Blocks of Data
 
@@ -116,7 +127,7 @@ type User struct {
 
 ## Example: Struct to JSON Conversion
 
-Here’s how you convert a Go struct to JSON using `json.Marshal`:
+Converting a Go struct to JSON using `json.Marshal`:
 
 ```go
 import "encoding/json"
@@ -144,6 +155,35 @@ Metadata for controlling serialization behavior
 
 **4. JSON Response**  
 Client-consumable data format
+
+---
+
+## Structs to JSON: The Transformation (cont.)
+
+![Serialization Meme](https://imgs.xkcd.com/comics/standards.png)
+
+<span style="font-size:1.05em; color:#34495e;">
+“Go makes struct-to-JSON serialization simple, but choosing the right approach for performance and memory is key.”
+</span>
+
+---
+
+## Marshal vs. Encoder
+
+- `json.Marshal` allocates an entire buffer
+- `json.NewEncoder` streams directly to an `io.Writer`
+- For large payloads, streaming can use **5-10x less memory**
+
+```go
+// Marshal: returns []byte
+data, _ := json.Marshal(users)
+w.Write(data)
+
+// Encoder: streams to writer
+json.NewEncoder(w).Encode(users)
+```
+
+Streaming is more efficient for big responses!
 
 ---
 
@@ -187,6 +227,26 @@ The `json:"fieldname"` tag controls how the field appears in JSON output.
 
 ---
 
+
+## HTTP Request Lifecycle: Context is King
+
+- Propagate `context.Context` for timeout/cancellation
+- Set deadlines to prevent resource exhaustion
+- Handle `ctx.Done()` to stop wasted work
+
+```go
+func handler(ctx context.Context) {
+  select {
+  case <-ctx.Done():
+    // handle cancellation
+  default:
+    // continue work
+  }
+}
+```
+
+---
+
 ## Request, Process, Decode, Encode
 
 - **Request**  
@@ -211,6 +271,16 @@ The `json:"fieldname"` tag controls how the field appears in JSON output.
   Convert struct back to JSON  
   `w.Header().Set("Content-Type", "application/json")`  
   `json.NewEncoder(w).Encode(createdUser)`
+
+---
+
+## Request, Process, Decode, Encode
+
+![HTTP Cat 201](https://http.cat/201)
+
+<span style="font-size:1.05em; color:#34495e;">
+"Created! When your API flow just works."
+</span>
 
 ---
 
@@ -295,6 +365,12 @@ Align JSON responses with appropriate HTTP status codes.
 
 ---
 
+
+# <span style="font-size:3em; font-weight:bold; color:#2c3e3e;">Short Demo</span>
+
+---
+
+
 ## Key Takeaways
 
 - **Go structs are your data foundation**  
@@ -310,6 +386,21 @@ Align JSON responses with appropriate HTTP status codes.
   Catch bad data and provide clear feedback.
 
 ---
+
+## Key Takeaways (cont.)
+
+- **Keep struct transformations explicit at layer boundaries**
+  - Improves maintainability and clarity
+  - Prevents hidden logic and surprises
+  - Makes debugging and refactoring easier
+
+<span style="color:#2c3e3e; font-size:1.08em;">
+Explicit conversions = predictable, maintainable code!
+</span>
+
+
+---
+
 ## Thank You!
 
 Questions?  
