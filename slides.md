@@ -274,16 +274,6 @@ func handler(ctx context.Context) {
 
 ---
 
-## Request, Process, Decode, Encode (cont.)
-
-![HTTP Cat 201](https://http.cat/201)
-
-<span style="font-size:1.05em; color:#34495e;">
-"Created! When your API flow just works."
-</span>
-
----
-
 ## Validation: Ensuring Data Integrity
 
 - **What is <span style="color:green;">Validation</span>?**  
@@ -393,6 +383,9 @@ Align JSON responses with appropriate HTTP status codes.
   - Improves maintainability and clarity
   - Prevents hidden logic and surprises
   - Makes debugging and refactoring easier
+
+- **Interfaces extend your code beyond struct limitations**
+  - Enable flexible, testable, and extensible APIs
 
 <span style="color:#2c3e3e; font-size:1.08em;">
 Explicit conversions = predictable, maintainable code!

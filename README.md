@@ -157,6 +157,7 @@ curl http://localhost:8080/users
 - Want to use a different database? Implement the `UserStore` interface for your backend.
 - Add authentication, logging, or more resource types as needed.
 - Integrate with a frontend or deploy as a microservice.
+- Structs are powerful, but interfaces let us abstract behavior and write code that’s easier to test and extend. By combining structs and interfaces, we get the best of both worlds in Go API design.
 
 - Maintenance Tip: Regularly update dependencies to receive security patches.
 - Extend API endpoints to support pagination, filtering, or advanced queries.
