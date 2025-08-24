@@ -54,7 +54,7 @@ This diagram illustrates the HTTP handler flow in Go:
 ## Getting Started
 
 **Requirements:**  
-- Go (1.21 +)
+- Go 1.24 +
 - PostgreSQL (local or remote)
 
 **Get Started:** 
